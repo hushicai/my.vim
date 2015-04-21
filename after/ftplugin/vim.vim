@@ -1,0 +1,2 @@
+" vim setting
+set comments-=:;
