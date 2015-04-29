@@ -1,3 +1,3 @@
-" json
+" conf
 
-au BufNewFile,BufRead module.conf setlocal filetype=json
+au BufNewFile,BufRead *.conf setlocal filetype=conf

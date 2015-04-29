@@ -2,22 +2,13 @@
 
 setlocal cinkeys-=:
 setlocal fdm=syntax
+set comments-=://
 
 
-" let g:ycm_min_num_of_chars_for_completion = 3
-" let g:ycm_autoclose_preview_window_after_completion=1
-" let g:ycm_complete_in_comments = 1
-" let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
-" let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
-" let g:ycm_confirm_extra_conf = 0
-" let g:ycm_global_ycm_extra_conf = '~/data/github/dotfiles/vim/ycm.py'
-" let g:ycm_collect_identifiers_from_tags_files = 1
-" let g:ycm_seed_identifiers_with_syntax = 1
-" let g:ycm_server_use_vim_stdout = 1
-" let g:ycm_server_log_level = 'debug'
-" nnoremap <leader>jd :YcmCompleter GoToDefinition<cr>
-" nnoremap <leader>jc :YcmCompleter GoToDeclaration<cr>
-" nnoremap <leader>js :YcmCompleter GoTo<cr>
+" youcompleteme
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_global_ycm_extra_conf = '~/data/github/dotfiles/vim/ycm.py'
+
 
 
 " cscope
