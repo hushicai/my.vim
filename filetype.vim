@@ -1,11 +1,11 @@
 " set title not work
 " so use BufEnter instead
 " set title
-function MyBufEnterWithName()
+function! MyBufEnterWithName()
     :silent !echo -en "\033]0;%:p\a"
 endfunction
 
-function MyBufEnterWithoutName()
+function! MyBufEnterWithoutName()
     :silent !echo -en "\033]0;%:p:h\a"
 endfunction
 

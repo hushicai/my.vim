@@ -11,4 +11,4 @@ let g:tagbar_type_javascript = {
     \ 'ctagsargs': '--dir=' . getcwd() . ' -f -'
 \ }
 
-set dictionary+=~/data/github/dotfiles/vim//dictionary/javascript.dict
+set dictionary+=~/data/github/dotfiles/vim/dictionary/javascript.dict
