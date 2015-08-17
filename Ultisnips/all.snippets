@@ -124,7 +124,7 @@ endsnippet
 snippet modeline "modeline" b
 `!p 
 snip.rv = _get_comment_format()[0] + " "
-`vim: set ft=`!p snip.rv = vim.eval('&ft')` ts=4 sw=4 sts=4 tw=120 fdm=${1:`!p snip.rv = vim.eval('&fdm')`}:`!p
+`vim: set ft=${1:`!p snip.rv = vim.eval('&ft')`} ts=4 sw=4 sts=4 tw=120 fdm=${2:`!p snip.rv = vim.eval('&fdm')`}:`!p
 snip.rv = " " + _get_comment_format()[2]`$0
 endsnippet
 
