@@ -1,0 +1,99 @@
+priority -50
+
+# ecomfe snippets
+# @see: https://github.com/ecomfe/spec/blob/master/javascript-code-style.md
+
+snippet @file "ecomfe文件注释规范"
+/**
+ * @file ${1:Describe the file}$0
+ * @author hushicai(bluthcy@gmail.com)
+ */
+endsnippet
+
+snippet @ns "ecomfe命名空间注释规范"
+/**
+ * @namespace
+ */
+endsnippet
+
+snippet @class "ecomfe类注释规范"
+/**
+ * ${1:Description}$0
+ *
+ * @constructor
+ */
+endsnippet
+
+snippet @extend "ecomfe继承注释规范"
+/**
+ * ${1:Description}
+ *
+ * @constructor
+ * @extends ${2:superClass}$0
+ */
+endsnippet
+
+snippet @property "ecomfe类属性成员注释规范"
+/**
+ * ${1:Description}
+ *
+ * @type {${2:Type}}
+ * @${3:{public|protected|private}}$0
+ */
+endsnippet
+
+snippet @method "ecomfe类方法成员注释规范"
+/**
+ * ${1:Description}
+ *
+ * @${2:{public|protected|private}}
+ * @return {${4:Type}} ${3:Description}$0
+ */
+endsnippet
+
+snippet @lend "ecomfe包装方式扩展类成员注释规范"
+/** @lends ${1:namepath} */$0
+endsnippet
+
+snippet @fmethod "ecomfe普通函数注释规范"
+/**
+ * ${1:Description}
+ *
+ * @return {${2:Type}} ${3:Description}$0
+ */
+endsnippet
+
+snippet @event "ecomfe事件注释规范"
+/**
+ * ${1:Description}
+ *
+ * @event
+ * @param {${2:Type}} ${3:e} ${4:Description}$0
+ */
+endsnippet
+
+snippet @fire "ecomfe触发事件注释规范"
+/**
+ * ${1:Description}
+ *
+ * @event ${2:object#event}
+ * @param {${3:Type}} ${4:e} ${5:Description}$0
+ */
+endsnippet
+
+snippet @type "ecomfe变量说明注释规范"
+/**
+ * ${1:Description}
+ *
+ * @type {${2:Type}}$0
+ */
+endsnippet
+
+snippet @const "ecomfe常量说明注释规范"
+/**
+ * ${1:Description}
+ *
+ * @const
+ * @type {${2:Type}}$0
+ */
+endsnippet
