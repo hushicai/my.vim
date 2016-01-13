@@ -1,0 +1,17 @@
+priority -50
+
+# es6 snippets
+
+snippet strict "strict mode" b
+"use strict";
+endsnippet
+
+snippet forof "for of" b
+for (var ${1:v} of ${2:generator}) {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet arrow "arrow functions" i
+${1:parameters} => ${2:body}$0
+endsnippet
