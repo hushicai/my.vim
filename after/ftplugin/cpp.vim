@@ -7,7 +7,7 @@ set comments-=://
 
 " youcompleteme
 let g:ycm_confirm_extra_conf = 0
-let g:ycm_global_ycm_extra_conf = '~/data/github/dotfiles/vim/ycm.py'
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/my.vim/conf/ycm.py'
 
 
 

@@ -1,9 +1,9 @@
 " javascript setting
 
 " syntastic
-let g:syntastic_javascript_checkers = ['fecs']
-let g:syntastic_javascript_fecs_args = "--reporter=baidu --rule"
+" let g:syntastic_javascript_checkers = ['fecs']
+" let g:syntastic_javascript_fecs_args = "--reporter=baidu --rule"
 
 set comments-=://
 
-set dictionary+=~/data/github/dotfiles/vim/dictionary/javascript.dict
+set dictionary+=~/.vim/bundle/my.vim/dictionary/javascript.dict
