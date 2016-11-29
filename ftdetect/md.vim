@@ -1,3 +1,3 @@
 " md
 
-au BufNewFile,BufRead *.md setlocal filetype=markdown.html
+au BufNewFile,BufRead *.md setlocal filetype=markdown
