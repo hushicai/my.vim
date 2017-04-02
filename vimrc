@@ -171,7 +171,7 @@ nnoremap <C-L>o :CtrlSFOpen<CR>
 
 " nerdtree
 let NERDTreeWinSize = 40
-let NERDTreeIgnore = ['\~$', '\.pyc$', 'node_modules']
+let NERDTreeIgnore = ['\~$', '\.pyc$']
 nmap <leader>nt :NERDTreeToggle<cr>
 
 " nerdcommenter
