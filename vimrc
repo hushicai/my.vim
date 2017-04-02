@@ -90,13 +90,9 @@ filetype off
 let &rtp = &rtp . "," . vundleHome
 call vundle#begin()
 Plugin 'gmarik/vundle'
-if g:os#win
-  Plugin 'file://' . $HOME . '\\my.vim'
-else
-  Plugin 'file://' . $HOME . '/my.vim'
-endif
+Plugin 'hushicai/my.vim'
 Plugin 'dyng/ctrlsf.vim'
-Plugin 'mattn/webapi-vim'
+" Plugin 'mattn/webapi-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 " Plugin 'suan/vim-instant-markdown.git'
