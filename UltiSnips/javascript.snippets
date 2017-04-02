@@ -184,16 +184,17 @@ endsnippet
 
 snippet interval "setInterval" b
 setInterval(function () {
-    ${VISUAL}$0
+	${VISUAL}$0
 }, ${1:10});
 endsnippet
 
 snippet switch "switch" b
 switch (${1:condition}) {
 	case ${2:case}:
+		${3:// content}
 		break;
 	default:
-		// default
+		${4:// default}
 }
 endsnippet
 

@@ -104,7 +104,7 @@ Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'scrooloose/nerdcommenter.git'
 Plugin 'scrooloose/syntastic.git'
-" Plugin 'ervandew/supertab'
+Plugin 'ervandew/supertab'
 " Plugin 'hushicai/fecs.vim.git'
 Plugin 'posva/vim-vue'
 Plugin 'mattn/emmet-vim.git'
@@ -241,14 +241,20 @@ nnoremap <leader>tt :TagbarToggle<cr>
 let g:tagbar_autofocus = 1
 " let g:tagbar_sort = 0
 
-" supertab 
-" let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
-set completeopt=menuone
+" omnifunc
+" set completeopt-=preview
+set completeopt+=longest
 set complete+=k
-autocmd Filetype * 
-      \   if &omnifunc == "" | 
-      \    setlocal omnifunc=syntaxcomplete#Complete | 
-      \   endif 
+autocmd Filetype *
+      \   if &omnifunc == "" |
+      \    setlocal omnifunc=syntaxcomplete#Complete |
+      \   endif
+
+" supertab
+let g:SuperTabDefaultCompletionType = 'context'
+let g:SuperTabContextDefaultCompletionType = '<c-x><c-o>'
+" let g:SuperTabClosePreviewOnPopupClose = 1
+let g:SuperTabLongestEnhanced = 1
 
 " ultisnips
 let g:UltiSnipsExpandTrigger="<c-j>"
@@ -258,46 +264,29 @@ let g:snips_author = 'Shicai Hu'
 let g:snips_author_email = 'bluthcy@gmail.com'
 
 " youcompleteme
-let g:ycm_min_num_of_chars_for_completion = 3 
-" let g:ycm_min_num_identifier_candidate_chars = 999
-" let g:ycm_autoclose_preview_window_after_completion=1
-" let g:ycm_complete_in_comments = 1
-" let g:ycm_complete_in_strings = 0
-" let g:ycm_auto_trigger = 0
-" let g:ycm_key_invoke_completion = '<tab>'
-let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
-let g:ycm_collect_identifiers_from_tags_files = 1
-" let g:ycm_server_use_vim_stdout = 1
-" let g:ycm_server_log_level = 'debug'
-let g:ycm_seed_identifiers_with_syntax = 1
-nnoremap <leader>jd :YcmCompleter GoToDeclaration<cr>
+" let g:ycm_min_num_of_chars_for_completion = 3 
+" let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
+" let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
+" let g:ycm_collect_identifiers_from_tags_files = 1
+" let g:ycm_seed_identifiers_with_syntax = 1
+" nnoremap <leader>jd :YcmCompleter GoToDeclaration<cr>
 
-function! MyTabFunction ()
-  let substr = strpart(getline('.'), 0, col('.') - 1)
-  let substr = matchstr(substr, "[^ \t]*$")
-  if strlen(substr) == 0
-    return "\<tab>"
-  endif
-  return pumvisible() ? "\<c-n>" : "\<c-x>\<c-o>"
-endfunction
-inoremap <tab> <c-r>=MyTabFunction()<cr>
+" function! MyTabFunction ()
+  " let substr = strpart(getline('.'), 0, col('.') - 1)
+  " let substr = matchstr(substr, "[^ \t]*$")
+  " if strlen(substr) == 0
+    " return "\<tab>"
+  " endif
+  " return pumvisible() ? "\<c-n>" : "\<c-x>\<c-o>"
+" endfunction
+" inoremap <tab> <c-r>=MyTabFunction()<cr>
 " another omni completion short-cut
-inoremap <c-o> <c-x><c-o>
+" inoremap <c-o> <c-x><c-o>
 
 " ultisnips
 " let g:UltiSnipsExpandTrigger = '<c-j>'
 " let g:UltiSnipsJumpForwardTrigger = '<c-j>'
 " let g:UltiSnipsListSnippets = '<c-l>'
-
-" tern
-" nnoremap <silent><leader>td :TernDef<cr>
-" nnoremap <silent><leader>tdp :TernDefPreview<cr>
-" nnoremap <silent><leader>tds :TernDefSplit<cr>
-" nnoremap <silent><leader>tdt :TernDefTab<cr>
-" nnoremap <silent><leader>tdd :TernDoc<cr>
-" let g:tern_show_signature_in_pum = 1
-"
 
 " jsx
 let g:jsx_ext_required = 0
