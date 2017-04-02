@@ -1,6 +1,14 @@
 # my.vim
 
-vim setting for different language
+vim settings
+
+## install
+
+```bash
+git clone git@github.com:hushicai/my.vim.git ~/my.vim
+cd ~
+ln -s ./my.vim/vimrc ./vimrc
+```
 
 ## reference
 
