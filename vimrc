@@ -90,6 +90,11 @@ filetype off
 let &rtp = &rtp . "," . vundleHome
 call vundle#begin()
 Plugin 'gmarik/vundle'
+if g:os#win
+  Plugin 'file://' . $HOME . '\\my.vim'
+else
+  Plugin 'file://' . $HOME . '/my.vim'
+endif
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'mattn/webapi-vim'
 Plugin 'vim-airline/vim-airline'
@@ -102,12 +107,6 @@ Plugin 'scrooloose/syntastic.git'
 " Plugin 'ervandew/supertab'
 " Plugin 'hushicai/fecs.vim.git'
 Plugin 'posva/vim-vue'
-if g:os#win
-  Plugin 'file://' . $HOME . '\\my.vim'
-else
-  Plugin 'file://' . $HOME . '/my.vim'
-endif
-" Plugin 'hushicai/my.vim'
 Plugin 'mattn/emmet-vim.git'
 Plugin 'tpope/vim-surround.git'
 Plugin 'tpope/vim-repeat.git'
