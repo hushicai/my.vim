@@ -103,7 +103,7 @@ Plugin 'scrooloose/syntastic.git'
 " Plugin 'hushicai/fecs.vim.git'
 Plugin 'posva/vim-vue'
 if g:os#win
-  Plugin 'file://' . $HOME . '\\.my.vim'
+  Plugin 'file://' . $HOME . '\\my.vim'
 else
   Plugin 'file://' . $HOME . '/my.vim'
 endif
