@@ -78,8 +78,10 @@ let iCanHazVundle=1
 let vundleReadme=expand('~/.vim/bundle/vundle/README.md')
 if g:os#win
   let vundleHome = $HOME . "\\.vim\\bundle\\vundle"
+  let myVim = "file://" . $HOME . "\\my.vim"
 else
   let vundleHome = $HOME . "/.vim/bundle/vundle"
+  let myVim = "file://" . $HOME . "/my.vim"
 endif
 if !filereadable(vundleReadme)
   silent exec "!git clone https://github.com/gmarik/vundle " . vundleHome
@@ -90,7 +92,7 @@ filetype off
 let &rtp = &rtp . "," . vundleHome
 call vundle#begin()
 Plugin 'gmarik/vundle'
-Plugin 'hushicai/my.vim'
+Plugin myVim
 Plugin 'dyng/ctrlsf.vim'
 " Plugin 'mattn/webapi-vim'
 Plugin 'vim-airline/vim-airline'
