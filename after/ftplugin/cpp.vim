@@ -7,9 +7,14 @@ set comments-=://
 
 " youcompleteme
 let g:ycm_confirm_extra_conf = 0
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/my.vim/conf/ycm.py'
 
+if g:os#win
+  let g:ycm_global_ycm_extra_conf = $HOME . '\\my.vim\\conf\\ycm.py'
+else
+  let g:ycm_global_ycm_extra_conf = $HOME . '/.vim/bundle/my.vim/conf/ycm.py'
+endif
 
+" let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/my.vim/conf/ycm.py'
 
 " cscope
 " set cscopequickfix=s-,c-,d-,i-,t-,e-
