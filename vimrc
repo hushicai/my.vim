@@ -133,7 +133,6 @@ if g:os#mac
   Plugin 'rizzatti/dash.vim'
 endif
 " Plugin 'Valloric/YouCompleteMe.git'
-" Plugin 'spf13/PIV'
 call vundle#end()
 filetype plugin indent on
 syntax on
@@ -259,6 +258,9 @@ let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 let g:snips_author = 'Shicai Hu'
 let g:snips_author_email = 'bluthcy@gmail.com'
 
+" autochdir
+autocmd BufEnter * silent! lcd %:p:h
+
 " youcompleteme
 " let g:ycm_min_num_of_chars_for_completion = 3 
 " let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
@@ -276,13 +278,6 @@ let g:snips_author_email = 'bluthcy@gmail.com'
   " return pumvisible() ? "\<c-n>" : "\<c-x>\<c-o>"
 " endfunction
 " inoremap <tab> <c-r>=MyTabFunction()<cr>
-" another omni completion short-cut
-" inoremap <c-o> <c-x><c-o>
-
-" ultisnips
-" let g:UltiSnipsExpandTrigger = '<c-j>'
-" let g:UltiSnipsJumpForwardTrigger = '<c-j>'
-" let g:UltiSnipsListSnippets = '<c-l>'
 
 " jsx
 let g:jsx_ext_required = 0
