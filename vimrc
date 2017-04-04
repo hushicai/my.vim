@@ -119,7 +119,7 @@ Plugin 'juvenn/mustache.vim.git'
 " Plugin 'wavded/vim-stylus.git'
 Plugin 'terryma/vim-multiple-cursors.git'
 Plugin 'SirVer/ultisnips.git'
-Plugin 'marijnh/tern_for_vim.git'
+Plugin 'ternjs/tern_for_vim.git'
 " Plugin 'vim-php/tagbar-phpctags.vim'
 " Plugin 'shawncplus/phpcomplete.vim'
 " Plugin 'elzr/vim-json'
@@ -237,7 +237,7 @@ let g:tagbar_autofocus = 1
 " let g:tagbar_sort = 0
 
 " omnifunc
-" set completeopt-=preview
+set completeopt-=preview
 set completeopt+=longest
 set complete+=k
 autocmd Filetype *
@@ -260,6 +260,13 @@ let g:snips_author_email = 'bluthcy@gmail.com'
 
 " autochdir
 autocmd BufEnter * silent! lcd %:p:h
+
+" tern
+let g:tern_request_query = {
+  \ 'completions': {
+      \ 'includeKeywords': v:true
+  \ }
+\ }
 
 " youcompleteme
 " let g:ycm_min_num_of_chars_for_completion = 3 
