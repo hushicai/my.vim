@@ -3,9 +3,20 @@
 " syntastic
 let g:syntastic_javascript_checkers = ['eslint']
 
-set comments-=://
+" set dictionary+=~/my.vim/dictionary/javascript.dict
 
-" set dictionary+=~/.vim/bundle/my.vim/dictionary/javascript.dict
+" supertab
+let g:SuperTabContextTextMemberPatterns = []
+
+" tern
+let g:tern_request_query = {
+  \ 'completions': {
+      \ 'includeKeywords': v:true
+  \ }
+\ }
+
+
+set comments-=://
 
 let g:tagbar_type_javascript = {
     \ 'ctagsbin'  : 'jsctags',

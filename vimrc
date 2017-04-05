@@ -237,8 +237,7 @@ let g:tagbar_autofocus = 1
 " let g:tagbar_sort = 0
 
 " omnifunc
-set completeopt-=preview
-set completeopt+=longest
+set completeopt=menuone,longest
 set complete+=k
 autocmd Filetype *
       \   if &omnifunc == "" |
@@ -247,9 +246,11 @@ autocmd Filetype *
 
 " supertab
 let g:SuperTabDefaultCompletionType = 'context'
-let g:SuperTabContextDefaultCompletionType = '<c-x><c-o>'
-" let g:SuperTabClosePreviewOnPopupClose = 1
 let g:SuperTabLongestEnhanced = 1
+autocmd FileType *
+      \ if &omnifunc != '' |
+      \   call SuperTabChain(&omnifunc, "<c-p>") |
+      \ endif
 
 " ultisnips
 let g:UltiSnipsExpandTrigger="<c-j>"
@@ -261,15 +262,8 @@ let g:snips_author_email = 'bluthcy@gmail.com'
 " autochdir
 autocmd BufEnter * silent! lcd %:p:h
 
-" tern
-let g:tern_request_query = {
-  \ 'completions': {
-      \ 'includeKeywords': v:true
-  \ }
-\ }
-
 " youcompleteme
-" let g:ycm_min_num_of_chars_for_completion = 3 
+" let g:ycm_min_num_of_chars_for_completion = 3
 " let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
 " let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
 " let g:ycm_collect_identifiers_from_tags_files = 1

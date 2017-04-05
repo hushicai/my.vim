@@ -14,8 +14,6 @@ else
   let g:ycm_global_ycm_extra_conf = $HOME . '/my.vim/conf/ycm.py'
 endif
 
-" let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/my.vim/conf/ycm.py'
-
 " cscope
 " set cscopequickfix=s-,c-,d-,i-,t-,e-
 " set cst
