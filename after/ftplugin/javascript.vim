@@ -1,5 +1,7 @@
 " javascript setting
 
+set comments-=://
+
 " syntastic
 let g:syntastic_javascript_checkers = ['eslint']
 
@@ -14,9 +16,6 @@ let g:tern_request_query = {
       \ 'includeKeywords': v:true
   \ }
 \ }
-
-
-set comments-=://
 
 let g:tagbar_type_javascript = {
     \ 'ctagsbin'  : 'jsctags',
