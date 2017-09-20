@@ -93,6 +93,7 @@ Plugin 'gmarik/vundle'
 Plugin 'my.vim',{'pinned': 1}
 Plugin 'dyng/ctrlsf.vim'
 " Plugin 'mattn/webapi-vim'
+Plugin 'b4winckler/vim-objc'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 " Plugin 'suan/vim-instant-markdown.git'
@@ -134,7 +135,6 @@ if g:os#mac
   Plugin 'rizzatti/dash.vim'
 endif
 Plugin 'Valloric/YouCompleteMe.git'
-Plugin 'msanders/cocoa.vim'
 call vundle#end()
 filetype plugin indent on
 syntax on
