@@ -1,0 +1,40 @@
+let mapleader=","
+
+set scrolloff=3
+set hlsearch
+set incsearch
+set ignorecase smartcase
+set number
+set showmode
+
+set autoindent
+
+set smarttab
+set expandtab
+" set tabstop=2
+" set shiftwidth=2
+"
+
+" enable surround
+set surround
+
+" Quit insert mode
+inoremap jk <esc>
+
+" shell like moving
+inoremap <silent> <c-e> <esc>$a
+inoremap <silent> <c-a> <esc>^i
+inoremap <silent> <c-f> <right>
+inoremap <silent> <c-b> <left>
+inoremap <silent> <c-d> <esc><right>xi
+
+" clear last search highlight
+nnoremap <leader><space> :nohlsearch<cr>
+
+" navigation
+nnoremap <c-o> :action Back<cr>
+nnoremap <c-i> :action Forward<cr>
+
+" tabs
+nnoremap gh gT
+nnoremap gl gt

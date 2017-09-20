@@ -100,9 +100,10 @@ Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'scrooloose/nerdcommenter.git'
 Plugin 'scrooloose/syntastic.git'
-Plugin 'ervandew/supertab'
+" Plugin 'leafgarland/typescript-vim.git'
+" Plugin 'ervandew/supertab'
 " Plugin 'hushicai/fecs.vim.git'
-Plugin 'posva/vim-vue'
+" Plugin 'posva/vim-vue'
 Plugin 'mattn/emmet-vim.git'
 Plugin 'tpope/vim-surround.git'
 Plugin 'tpope/vim-repeat.git'
@@ -132,7 +133,8 @@ Plugin 'hynek/vim-python-pep8-indent'
 if g:os#mac
   Plugin 'rizzatti/dash.vim'
 endif
-" Plugin 'Valloric/YouCompleteMe.git'
+Plugin 'Valloric/YouCompleteMe.git'
+Plugin 'msanders/cocoa.vim'
 call vundle#end()
 filetype plugin indent on
 syntax on
@@ -201,7 +203,6 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 nmap <leader>st :SyntasticToggleMode<cr>
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -245,12 +246,12 @@ autocmd Filetype *
       \   endif
 
 " supertab
-let g:SuperTabDefaultCompletionType = 'context'
-let g:SuperTabLongestEnhanced = 1
-autocmd FileType *
-      \ if &omnifunc != '' |
-      \   call SuperTabChain(&omnifunc, "<c-p>") |
-      \ endif
+" let g:SuperTabDefaultCompletionType = 'context'
+" let g:SuperTabLongestEnhanced = 1
+" autocmd FileType *
+      " \ if &omnifunc != '' |
+      " \   call SuperTabChain(&omnifunc, "<c-p>") |
+      " \ endif
 
 " ultisnips
 let g:UltiSnipsExpandTrigger="<c-j>"
@@ -263,22 +264,22 @@ let g:snips_author_email = 'bluthcy@gmail.com'
 autocmd BufEnter * silent! lcd %:p:h
 
 " youcompleteme
-" let g:ycm_min_num_of_chars_for_completion = 3
-" let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
-" let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
-" let g:ycm_collect_identifiers_from_tags_files = 1
-" let g:ycm_seed_identifiers_with_syntax = 1
-" nnoremap <leader>jd :YcmCompleter GoToDeclaration<cr>
+let g:ycm_min_num_of_chars_for_completion = 3
+let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_seed_identifiers_with_syntax = 1
+nnoremap <leader>jd :YcmCompleter GoToDefinition<cr>
 
-" function! MyTabFunction ()
-  " let substr = strpart(getline('.'), 0, col('.') - 1)
-  " let substr = matchstr(substr, "[^ \t]*$")
-  " if strlen(substr) == 0
-    " return "\<tab>"
-  " endif
-  " return pumvisible() ? "\<c-n>" : "\<c-x>\<c-o>"
-" endfunction
-" inoremap <tab> <c-r>=MyTabFunction()<cr>
+function! MyTabFunction ()
+  let substr = strpart(getline('.'), 0, col('.') - 1)
+  let substr = matchstr(substr, "[^ \t]*$")
+  if strlen(substr) == 0
+    return "\<tab>"
+  endif
+  return pumvisible() ? "\<c-n>" : "\<c-x>\<c-o>"
+endfunction
+inoremap <tab> <c-r>=MyTabFunction()<cr>
 
 " jsx
 let g:jsx_ext_required = 0
