@@ -2,5 +2,10 @@
 set hlsearch
 set incsearch
 set ignorecase smartcase
+
 " Quit insert mode
 inoremap jk <esc>
+
+" ctrl+i/o maybe better
+map <C-i> :xccmd goForwardInHistoryByCommand<CR>
+map <C-o> :xccmd goBackInHistoryByCommand<CR>
