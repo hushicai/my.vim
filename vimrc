@@ -41,8 +41,8 @@ set incsearch
 set autoindent
 " tab and space
 set smarttab
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
 " fold
 set foldmethod=indent
@@ -91,6 +91,7 @@ let &rtp = &rtp . "," . vundleHome
 call vundle#begin()
 Plugin 'gmarik/vundle'
 Plugin 'my.vim',{'pinned': 1}
+Plugin 'rdnetto/YCM-Generator',{'branch': 'stable'}
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -248,6 +249,7 @@ let g:snips_author_email = 'bluthcy@gmail.com'
 autocmd BufEnter * silent! lcd %:p:h
 
 " youcompleteme
+let g:ycm_confirm_extra_conf = 0
 let g:ycm_min_num_of_chars_for_completion = 3
 let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
