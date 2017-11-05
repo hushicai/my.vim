@@ -1,0 +1,6 @@
+
+set hlsearch
+set incsearch
+set ignorecase smartcase
+" Quit insert mode
+inoremap jk <esc>

@@ -92,47 +92,34 @@ call vundle#begin()
 Plugin 'gmarik/vundle'
 Plugin 'my.vim',{'pinned': 1}
 Plugin 'dyng/ctrlsf.vim'
-" Plugin 'mattn/webapi-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-" Plugin 'suan/vim-instant-markdown.git'
+Plugin 'suan/vim-instant-markdown.git'
 Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'scrooloose/nerdcommenter.git'
 Plugin 'scrooloose/syntastic.git'
-Plugin 'ervandew/supertab'
-" Plugin 'hushicai/fecs.vim.git'
+" Plugin 'ervandew/supertab'
 Plugin 'posva/vim-vue'
 Plugin 'mattn/emmet-vim.git'
 Plugin 'tpope/vim-surround.git'
 Plugin 'tpope/vim-repeat.git'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx.git'
-" Plugin 'kana/vim-textobj-function.git'
 Plugin 'kien/ctrlp.vim.git'
 Plugin 'Raimondi/delimitMate.git'
 Plugin 'Lokaltog/vim-easymotion.git'
-" Plugin 'hushicai/vim-web-indent.git'
 Plugin 'groenewege/vim-less.git'
-" Plugin 'hushicai/vim-etpl.git'
-Plugin 'juvenn/mustache.vim.git'
-" Plugin 'wavded/vim-stylus.git'
 Plugin 'terryma/vim-multiple-cursors.git'
 Plugin 'SirVer/ultisnips.git'
 Plugin 'ternjs/tern_for_vim.git'
-" Plugin 'vim-php/tagbar-phpctags.vim'
-" Plugin 'shawncplus/phpcomplete.vim'
-" Plugin 'elzr/vim-json'
-Plugin 'majutsushi/tagbar.git'
-" Plugin 'chazy/cscope_maps'
-Plugin 'bronson/vim-trailing-whitespace'
+" Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'vim-scripts/matchit.zip.git'
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'hynek/vim-python-pep8-indent'
 if g:os#mac
   Plugin 'rizzatti/dash.vim'
 endif
-" Plugin 'Valloric/YouCompleteMe.git'
+Plugin 'Valloric/YouCompleteMe.git'
 call vundle#end()
 filetype plugin indent on
 syntax on
@@ -245,12 +232,12 @@ autocmd Filetype *
       \   endif
 
 " supertab
-let g:SuperTabDefaultCompletionType = 'context'
-let g:SuperTabLongestEnhanced = 1
-autocmd FileType *
-      \ if &omnifunc != '' |
-      \   call SuperTabChain(&omnifunc, "<c-p>") |
-      \ endif
+" let g:SuperTabDefaultCompletionType = 'context'
+" let g:SuperTabLongestEnhanced = 1
+" autocmd FileType *
+      " \ if &omnifunc != '' |
+      " \   call SuperTabChain(&omnifunc, "<c-p>") |
+      " \ endif
 
 " ultisnips
 let g:UltiSnipsExpandTrigger="<c-j>"
@@ -263,22 +250,21 @@ let g:snips_author_email = 'bluthcy@gmail.com'
 autocmd BufEnter * silent! lcd %:p:h
 
 " youcompleteme
-" let g:ycm_min_num_of_chars_for_completion = 3
-" let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
-" let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
-" let g:ycm_collect_identifiers_from_tags_files = 1
-" let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_min_num_of_chars_for_completion = 3
+let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_seed_identifiers_with_syntax = 1
+function! MyTabFunction ()
+  let substr = strpart(getline('.'), 0, col('.') - 1)
+  let substr = matchstr(substr, "[^ \t]*$")
+  if strlen(substr) == 0
+    return "\<tab>"
+  endif
+  return pumvisible() ? "\<c-n>" : "\<c-x>\<c-o>"
+endfunction
+inoremap <tab> <c-r>=MyTabFunction()<cr>
 " nnoremap <leader>jd :YcmCompleter GoToDeclaration<cr>
-
-" function! MyTabFunction ()
-  " let substr = strpart(getline('.'), 0, col('.') - 1)
-  " let substr = matchstr(substr, "[^ \t]*$")
-  " if strlen(substr) == 0
-    " return "\<tab>"
-  " endif
-  " return pumvisible() ? "\<c-n>" : "\<c-x>\<c-o>"
-" endfunction
-" inoremap <tab> <c-r>=MyTabFunction()<cr>
 
 " jsx
 let g:jsx_ext_required = 0
