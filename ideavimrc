@@ -4,6 +4,8 @@ set scrolloff=3
 set hlsearch
 set incsearch
 set ignorecase smartcase
+set number
+set showmode
 
 set autoindent
 

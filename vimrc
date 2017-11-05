@@ -99,7 +99,6 @@ Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'scrooloose/nerdcommenter.git'
 Plugin 'scrooloose/syntastic.git'
-" Plugin 'ervandew/supertab'
 Plugin 'posva/vim-vue'
 Plugin 'mattn/emmet-vim.git'
 Plugin 'tpope/vim-surround.git'
@@ -188,7 +187,6 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 nmap <leader>st :SyntasticToggleMode<cr>
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -255,6 +253,9 @@ let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_seed_identifiers_with_syntax = 1
+
+nnoremap <leader>gd :YcmCompleter GoToDefinition<cr>
+
 function! MyTabFunction ()
   let substr = strpart(getline('.'), 0, col('.') - 1)
   let substr = matchstr(substr, "[^ \t]*$")
@@ -264,7 +265,6 @@ function! MyTabFunction ()
   return pumvisible() ? "\<c-n>" : "\<c-x>\<c-o>"
 endfunction
 inoremap <tab> <c-r>=MyTabFunction()<cr>
-" nnoremap <leader>jd :YcmCompleter GoToDeclaration<cr>
 
 " jsx
 let g:jsx_ext_required = 0
